@@ -2,11 +2,62 @@
 <html>
 <head>
     <title></title>
-    </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        var spData = null;
+
+        function doData(json) {
+            spData = json.feed.entry;
+        }
+        function readData() {
+            var data = spData;
+            var strData = '';
+            // consolr.log
+            for (var r = 0; r < data.length; r++) {
+                var cell = data[r]["gs$cell"];
+                if (r >= 0 && r < 4) {
+                    if (cell["col"] == "1") {
+                        strData += '<tr class="row">';
+                        strData += '<th class="col-md-1"><b>' + cell["$t"] + '</b></th>';
+                    } else if (cell["col"] == "2") {
+                        strData += '<th class="col-md-1"><b>' + cell["$t"] + '</b></th>';
+                    } else if (cell["col"] == "3") {
+                        strData += '<th class="col-md-1"><b>' + cell["$t"] + '</b></th>';
+                    } else if (cell["col"] == "4") {
+                        strData += '<th class="col-md-2"><b>' + cell["$t"] + '</b></th>';
+                        strData += '</tr>';
+                    }
+                } else {
+                    if (cell["col"] == "1") {
+                        strData += '<tr class="row">';
+                        strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
+                    } else if (cell["col"] == "2") {
+                        strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
+                    } else if (cell["col"] == "3") {
+                        strData += '<td class="col-md-1"><img width="100%" src="' + cell["$t"] + '"></td>';
+                    } else if (cell["col"] == "4") {
+                        strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
+                        strData += '</tr>';
+                    }
+                }
+            }
+            $("#data").after(strData);
+        }
+        $(document).ready(function() {
+            readData();
+        });
+        
+    </script>
+    <script src="https://spreadsheets.google.com/feeds/cells/YOURGOOGLESHEETCODE/SHEETPAGENUMBER/public/values?alt=json-in-script&callback=doData"></script>
+</head>
 <body>
-    <h1>Lấy dữ liệu từ google sheet</h1>
-    <table>
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgYcNo39CMCnYayp8OzUnIINlajWt7NYcbahm6JPi1_7Werbe5yIlXBOue66vEYwggF4wStF6qBQt_/pubhtml?gid=1308396326&amp;single=true&amp;widget=true&amp;headers=false&amp;range=E:I"></iframe>
-    </table>
+<table style="width: 80%">
+    <tbody id="data">
+        <!-- Content Here -->
+    </tbody>
+</table>
 </body>
 </html>
