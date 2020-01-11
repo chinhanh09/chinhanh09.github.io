@@ -21,7 +21,7 @@
                 var cell = data[r]["gs$cell"];
                 if (r >= 0 && r < 4) {
                     if (cell["col"] == "1") {
-                        strData += '<tr class="row">';
+                        strData += '<tr>';
                         strData += '<th><b>' + cell["$t"] + '</b></th>';
                     } else if (cell["col"] == "2") {
                         strData += '<th><b>' + cell["$t"] + '</b></th>';
@@ -34,6 +34,7 @@
                         strData += '</tr>';
                     }
                 } else {
+                    <tbody>
                     if (cell["col"] == "1") {
                         strData += '<tr class="row"><b>';
                         strData += '<td>' + cell["$t"] + '</td>';
@@ -46,6 +47,7 @@
                    // } else if (cell["col"] == "9") {
                      //   strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
                         strData += '</tr>';
+                        </tbody>
                     }
                 }
             }
