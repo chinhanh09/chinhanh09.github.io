@@ -31,14 +31,16 @@
                         strData += '</tr>';
                     }
                 } else {
-                    if (cell["col"] == "1") {
+                    if (cell["col"] == "5") {
                         strData += '<tr class="row">';
                         strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
-                    } else if (cell["col"] == "2") {
+                    } else if (cell["col"] == "6") {
                         strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
-                    } else if (cell["col"] == "3") {
-                        strData += '<td class="col-md-1"><img width="100%" src="' + cell["$t"] + '"></td>';
-                    } else if (cell["col"] == "4") {
+                    } else if (cell["col"] == "7") {
+                        strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
+                    } else if (cell["col"] == "8") {
+                        strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
+                    } else if (cell["col"] == "9") {
                         strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
                         strData += '</tr>';
                     }
