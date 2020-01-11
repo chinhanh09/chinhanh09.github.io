@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hàng Gửi Dịch Vụ Công Ích Phú Nhuận</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        var spData = null;
+	    var spData = null;
 
         function doData(json) {
             spData = json.feed.entry;
@@ -21,7 +23,7 @@
 				
                 if (r >= 0 && r < 4) {
                     if (cell["col"] == "1") {
-						strData += '<thead class="black white-text">';
+						strData += '<thead class="thead-light">';
                         strData += '<tr>';
                         strData += '<th scope="col"><b>' + cell["$t"] + '</b></th>';
                     } else if (cell["col"] == "2") {
@@ -36,12 +38,13 @@
 						strData += '<th scope="row"';
                         strData += '<td>' + cell["$t"] + '</td>';
                     } else if (cell["col"] == "2") {
-                        strData += '<td>' + cell["$t"] + '</td>';
-                        strData += '<th>';
-						strData += '</tr>';
+                        strData += '<td><b>' + cell["$t"] + '</b></td>';
+                        strData += '<th>';	
+						
                     }
                 }
             }
+			strData += '</tr>';
             $("#data").after(strData);
         }
         $(document).ready(function() {
@@ -55,8 +58,8 @@
 <table class="table">
 
     <tbody id="data">
-        <!-- Content Here -->
-    </tbody>
+            
+          </tbody>
 
 </table>
 </body>
