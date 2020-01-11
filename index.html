@@ -19,31 +19,31 @@
             for (var r = 0; r < data.length; r++) {
                 var cell = data[r]["gs$cell"];
                 if (r >= 0 && r < 4) {
-                    if (cell["col"] == "5") {
+                    if (cell["col"] == "1") {
                         strData += '<tr class="row">';
                         strData += '<th class="col-md-1"><b>' + cell["$t"] + '</b></th>';
-                    } else if (cell["col"] == "6") {
+                    } else if (cell["col"] == "2") {
                         strData += '<th class="col-md-1"><b>' + cell["$t"] + '</b></th>';
-                    } else if (cell["col"] == "7") {
-                        strData += '<th class="col-md-1"><b>' + cell["$t"] + '</b></th>';
-                    } else if (cell["col"] == "8") {
-                        strData += '<th class="col-md-2"><b>' + cell["$t"] + '</b></th>';
-                    } else if (cell["col"] == "9") {
-                        strData += '<th class="col-md-2"><b>' + cell["$t"] + '</b></th>';
+                    //} else if (cell["col"] == "7") {
+                      //  strData += '<th class="col-md-1"><b>' + cell["$t"] + '</b></th>';
+                 //   } else if (cell["col"] == "8") {
+                  ///      strData += '<th class="col-md-2"><b>' + cell["$t"] + '</b></th>';
+                  //  } else if (cell["col"] == "9") {
+                      //  strData += '<th class="col-md-2"><b>' + cell["$t"] + '</b></th>';
                         strData += '</tr>';
                     }
                 } else {
-                    if (cell["col"] == "5") {
+                    if (cell["col"] == "1") {
                         strData += '<tr class="row"><b>';
                         strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
-                    } else if (cell["col"] == "6") {
-                        strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
-                    } else if (cell["col"] == "7") {
-                        strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
-                    } else if (cell["col"] == "8") {
-                        strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
-                    } else if (cell["col"] == "9") {
-                        strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
+                    } else if (cell["col"] == "2") {
+                       // strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
+                  //  } else if (cell["col"] == "7") {
+                     //   strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
+                    //} else if (cell["col"] == "8") {
+                    //    strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
+                   // } else if (cell["col"] == "9") {
+                     //   strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
                         strData += '</tr>';
                     }
                 }
@@ -55,7 +55,7 @@
         });
         
     </script>
-    <script src="https://spreadsheets.google.com/feeds/cells/1dc29bBkUCiZUK0BBkx1VT8msavWzkJCRmvSQYv_D_1o/7/public/values?alt=json-in-script&callback=doData"></script>
+    <script src="https://spreadsheets.google.com/feeds/cells/1WvuZnlKJEBf85AZTukMtVC5j6wGeWtqveQFjydpPgds/1/public/values?alt=json-in-script&callback=doData"></script>
 </head>
 <body>
 <table style="width: 80%">
