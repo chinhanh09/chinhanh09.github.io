@@ -2,13 +2,11 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript">
-         <style type="text/css">
         var spData = null;
 
         function doData(json) {
@@ -20,35 +18,27 @@
             // consolr.log
             for (var r = 0; r < data.length; r++) {
                 var cell = data[r]["gs$cell"];
+				
                 if (r >= 0 && r < 4) {
                     if (cell["col"] == "1") {
+						strData += '<thead class="black white-text">';
                         strData += '<tr>';
-                        strData += '<th><b>' + cell["$t"] + '</b></th>';
+                        strData += '<th scope="col"><b>' + cell["$t"] + '</b></th>';
                     } else if (cell["col"] == "2") {
-                        strData += '<th><b>' + cell["$t"] + '</b></th>';
-                    //} else if (cell["col"] == "7") {
-                      //  strData += '<th class="col-md-1"><b>' + cell["$t"] + '</b></th>';
-                 //   } else if (cell["col"] == "8") {
-                  ///      strData += '<th class="col-md-2"><b>' + cell["$t"] + '</b></th>';
-                  //  } else if (cell["col"] == "9") {
-                      //  strData += '<th class="col-md-2"><b>' + cell["$t"] + '</b></th>';
+                        strData += '<th scope="col"><b>' + cell["$t"] + '</b></th>';
                         strData += '</tr>';
+						strData += '</thead>';
                     }
                 } else {
-                    <tbody>
                     if (cell["col"] == "1") {
-                        strData += '<tr class="row"><b>';
+						
+                        strData += '<tr>';
+						strData += '<th scope="row"';
                         strData += '<td>' + cell["$t"] + '</td>';
                     } else if (cell["col"] == "2") {
                         strData += '<td>' + cell["$t"] + '</td>';
-                  //  } else if (cell["col"] == "7") {
-                     //   strData += '<td class="col-md-1">' + cell["$t"] + '</td>';
-                    //} else if (cell["col"] == "8") {
-                    //    strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
-                   // } else if (cell["col"] == "9") {
-                     //   strData += '<td class="col-md-2">' + cell["$t"] + '</td>';
-                        strData += '</tr>';
-                        </tbody>
+                        strData += '<th>';
+						strData += '</tr>';
                     }
                 }
             }
@@ -62,18 +52,12 @@
     <script src="https://spreadsheets.google.com/feeds/cells/1WvuZnlKJEBf85AZTukMtVC5j6wGeWtqveQFjydpPgds/1/public/values?alt=json-in-script&callback=doData"></script>
 </head>
 <body>
+<table class="table">
 
-    <div class="example">
-        <div class="container">
-            <div class="row">
-                <h2>Hàng Gửi Dịch vụ công ích Phú Nhuận</h2>
-                <table class="table">
     <tbody id="data">
         <!-- Content Here -->
     </tbody>
-                </table>
-            </div>
-        </div>
-      </div>
+
+</table>
 </body>
 </html>
