@@ -11618,11 +11618,7 @@ footer .btn {
   background: #eee;
 }
 
-table tr td {
-  border: 1px solid #eee;
-  padding: 5px;
-  word-wrap: break-word;
-}
+
 
 .scroll-table {
   height: 300px;
