@@ -70,6 +70,8 @@
                         strData += '<th scope="col"><b>' + cell["$t"] + '</b></th>';
                     } else if (cell["col"] == "2") {
                         strData += '<th scope="col"><b>' + cell["$t"] + '</b></th>';
+			} else if (cell["col"] == "6") {
+                        strData += '<th scope="col"><b>' + cell["$t"] + '</b></th>';
                         strData += '</tr>';
 						strData += '</thead>';
                     }
@@ -78,9 +80,11 @@
 						
                         strData += '<tr>';
 			strData += '<th scope="row"';
-                        strData += '<td><font color="FF0000">' + cell["$t"] + '</font></td>';
+                        strData += '<td>' + cell["$t"] + '</td>';
                     } else if (cell["col"] == "2") {
                         strData += '<td><b><font color="FF0000">' + cell["$t"] + '</font></b></td>';
+			    } else if (cell["col"] == "6") {
+                        strData += '<td>' + cell["$t"] + '</td>';
                         strData += '</th>';	
 			strData += '</tr>';			
                     }
