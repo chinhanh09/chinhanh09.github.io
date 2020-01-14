@@ -81,12 +81,12 @@
                         strData += '<td><font color="FF0000">' + cell["$t"] + '</font></td>';
                     } else if (cell["col"] == "2") {
                         strData += '<td><b><font color="FF0000">' + cell["$t"] + '</font></b></td>';
-                        strData += '<th>';	
-						
+                        strData += '</th>';	
+			strData += '</tr>';			
                     }
                 }
             }
-			strData += '</tr>';
+			
             $("#data").after(strData);
         }
         $(document).ready(function() {
